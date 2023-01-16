@@ -1,6 +1,6 @@
 package com.parking.techlane.ejb;
 
-import com.parking.techlane.common.ProductDto;
+import com.parking.techlane.common.CarDto;
 import com.parking.techlane.common.CarPhotoDto;
 import com.parking.techlane.entities.Car;
 import com.parking.techlane.entities.CarPhoto;
@@ -23,7 +23,7 @@ public class CarsBean {
     @PersistenceContext
     EntityManager entityManager;
 
-    public List<ProductDto> findAllCars() {
+    public List<CarDto> findAllCars() {
         LOG.info("findAllCars");
         try {
             TypedQuery<Car> typedQuery =
@@ -35,11 +35,11 @@ public class CarsBean {
         }
     }
 
-    private List<ProductDto> copyCarsToDto(List<Car> cars) {
-        List<ProductDto> carDto;
+    private List<CarDto> copyCarsToDto(List<Car> cars) {
+        List<CarDto> carDto;
         carDto=cars
                 .stream()
-                .map(x->new ProductDto(x.getId(),x.getLicensePlate(),x.getParkingSpot(),x.getOwner().getUsername())).collect(Collectors.toList());
+                .map(x->new CarDto(x.getId(),x.getLicensePlate(),x.getParkingSpot(),x.getOwner().getUsername())).collect(Collectors.toList());
         return carDto;
     }
     public void createCar(String licensePlate,String parkingSpot,Long userId){
@@ -53,10 +53,10 @@ public class CarsBean {
         entityManager.persist(car);
     }
 
-    public ProductDto findById(Long carId){
+    public CarDto findById(Long carId){
 
        Car car=entityManager.find(Car.class,carId);
-       ProductDto cars=new ProductDto(car.getId(),car.getLicensePlate(), car.getParkingSpot(), car.getOwner().getUsername()) ;
+       CarDto cars=new CarDto(car.getId(),car.getLicensePlate(), car.getParkingSpot(), car.getOwner().getUsername()) ;
 
  return cars;
 

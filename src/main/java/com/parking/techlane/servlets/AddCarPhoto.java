@@ -1,6 +1,6 @@
 package com.parking.techlane.servlets;
 
-import com.parking.techlane.common.ProductDto;
+import com.parking.techlane.common.CarDto;
 import com.parking.techlane.ejb.CarsBean;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
@@ -23,7 +23,7 @@ public class AddCarPhoto extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Long carId=Long.parseLong(request.getParameter("id"));
-        ProductDto car=carsBean.findById(carId);
+        CarDto car=carsBean.findById(carId);
         request.setAttribute("car",car);
         request.getRequestDispatcher("/WEB-INF/pages/addCarPhoto.jsp");
     }

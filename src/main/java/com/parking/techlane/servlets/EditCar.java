@@ -1,6 +1,6 @@
 package com.parking.techlane.servlets;
 
-import com.parking.techlane.common.ProductDto;
+import com.parking.techlane.common.CarDto;
 import com.parking.techlane.common.UserDto;
 import com.parking.techlane.ejb.CarsBean;
 import com.parking.techlane.ejb.UserBean;
@@ -23,7 +23,7 @@ public class EditCar extends HttpServlet {
         List<UserDto> users=usersBean.findAllUsers();
         request.setAttribute("users",users);
         Long carId=Long.parseLong(request.getParameter("id"));
-        ProductDto car=carsBean.findById(carId);
+        CarDto car=carsBean.findById(carId);
         request.setAttribute("car",car);
         request.getRequestDispatcher("/WEB-INF/pages/editCar.jsp").forward(request,response);
     }

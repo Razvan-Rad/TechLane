@@ -1,6 +1,6 @@
 package com.parking.techlane.servlets;
 
-import com.parking.techlane.common.ProductDto;
+import com.parking.techlane.common.CarDto;
 import com.parking.techlane.ejb.CarsBean;
 import jakarta.annotation.security.DeclareRoles;
 import jakarta.inject.Inject;
@@ -22,7 +22,7 @@ public class Cars extends HttpServlet {
     @Override
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<ProductDto> cars=carsBean.findAllCars();
+        List<CarDto> cars=carsBean.findAllCars();
         request.setAttribute("cars",cars);
         request.setAttribute("numberOfFreeParkingSpots", 10);
         request.getRequestDispatcher("/WEB-INF/pages/cars.jsp").forward(request,response);

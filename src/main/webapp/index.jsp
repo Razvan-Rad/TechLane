@@ -36,8 +36,6 @@
     <h1 class="heading"> Our Products </h1>
     <div class="swiper slider">
         <div class="swiper-wrapper">
-
-            <h1>HELLO WROLD</h1>
             <c:forEach var="car" items="${cars}">
                 <div class="swiper-slide card">
                 <h2>Car X:</h2>
@@ -82,7 +80,6 @@
                 </c:if>
 
             </c:forEach>
-            <h1>HELLO WROLD</h1>
 
             <div class="swiper-slide card">
                 <img src="${pageContext.request.contextPath}/images/pc.png" alt="pc">
