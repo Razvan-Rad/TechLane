@@ -1,71 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <title>Shop</title>
-</head>
-
-<body>
-
-<!--HEADER-->
-<header class="header">
-    <a href="#">
-        <img src="${pageContext.request.contextPath}/images/logo2.png" alt="Logo" class="logo">
-    </a>
-    <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about us">About us</a>
-        <a href="#products">Products</a>
-        <a href="#features">Features</a>
-
-    </nav>
-    <div class="icons">
-        <div class="fas fa-bars" id="menu-btn"></div>
-        <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <div class="fas fa-user" id="user-btn"></div>
-    </div>
-    <form action="" class="login">
-        <h3>Login now</h3>
-        <input type="email" placeholder="enter your email" class="box">
-        <input type="password" placeholder="enter your password" class="box">
-        <p>don't have an account <a href="#">create now</a></p>
-        <input type="submit" value="login now" class="btn">
-    </form>
-    <div class="cart">
-        <div class="box">
-            <i class="fas fa-trash"></i>
-            <img src="${pageContext.request.contextPath}/images/laptop.png" alt="laptop">
-            <div class="content">
-                <h3>laptop Asus AV9993U</h3>
-                <span class="price">5.000 Ron /</span>
-                <span class="quantity">qty: 1</span>
-            </div>
-        </div>
-
-
-        <div class="box">
-            <i class="fas fa-trash"></i>
-            <img src="${pageContext.request.contextPath}/images/headphones.png" alt="laptop">
-            <div class="content">
-                <h3>Headphone BlueSag </h3>
-                <span class="price">43.00 Ron /</span>
-                <span class="quantity">qty: 1</span>
-            </div>
-        </div>
-        <div class="total"> total: 6.000 Ron</div>
-        <a href="#" class="btn">checkout</a>
-    </div>
-
-</header>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<t:pageTemplate pageTitle="Cars">
 
 <!--HOME-->
 
@@ -89,36 +25,65 @@
         <p>Computers, laptops, headphones, keyboards, everything you need
             for best quality and performance</p>
     </div>
-    <div class="imags">
-        <img src="${pageContext.request.contextPath}/images/keyboard.png" alt="about us">
-    </div>
-    </div>
-</section>
-
-<!--ABOUT US-->
-
-<section class="about" id="about us">
-    <div class="main">
-        <img src="${pageContext.request.contextPath}/images/laptop.png" alt="about us">
-        <div class="about-text">
-            <h1>about us</h1>
-            <p>We are a company that sells electronics, we have a wide range of
-                products, from computers, laptops to headphones, keyboards and etc.
-                we have everything you need for your daily life to a good price and for a good quality and best
-                performance.If you have any questions about our products you can easly send us an email
-                and we will be happy to answear :)</p>
+        <div class="imags">
+            <img src="${pageContext.request.contextPath}/images/keyboard.png" alt="about us">
         </div>
-
     </div>
 </section>
-
 
 <!--PRODUCTS-->
-
 <section class="products" id="products">
     <h1 class="heading"> Our Products </h1>
     <div class="swiper slider">
         <div class="swiper-wrapper">
+
+            <h1>HELLO WROLD</h1>
+            <c:forEach var="car" items="${cars}">
+                <div class="swiper-slide card">
+                <h2>Car X:</h2>
+                <c:if test="${pageContext.request.isUserInRole('READ_CARS')}">
+                    <div class="col">
+                        <input type="checkbox" name="car_ids" value="${car.id}"/>
+
+                    </div>
+
+                    <div class="col">
+                        <h3>Name</h3>
+                            ${car.licensePlate}
+                    </div>
+
+                    <div class="col">
+                        <h3>Description</h3>
+                            ${car.parkingSpot}
+                    </div>
+
+                    <div class="col">
+                        <h3>TODO make this int (Rating?) </h3>
+                            ${car.ownerName}
+                    </div>
+
+                    <div class="col">
+                            <%--                        <img src="${pageContext.request.contextPath}/CarPhoto?id=${car.id}" width="48"/>--%>
+                       <img src="${pageContext.request.contextPath}/1.png" width="48"/>
+                    </div>
+
+                    <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
+                        <div class="col">
+                            <a class="btn btn-secondary"
+                               href="${pageContext.request.contextPath}/AddCarPhoto?id=${car.id}" role="button">Add
+                                Photo</a>
+                        </div>
+                        <div class="col">
+                            <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditCar?id=${car.id}">Edit
+                                Car</a>
+                        </div>
+                    </c:if>
+                    </div>
+                </c:if>
+
+            </c:forEach>
+            <h1>HELLO WROLD</h1>
+
             <div class="swiper-slide card">
                 <img src="${pageContext.request.contextPath}/images/pc.png" alt="pc">
                 <h3>PC Gaming Snake 5500V</h3>
@@ -439,80 +404,5 @@
 
 </section>
 
-<!--Feature-->
 
-<section class="features" id="features">
-    <h1 class="heading"> Our Features </h1>
-    <div class="card-container">
-        <div class="card">
-            <img src="${pageContext.request.contextPath}/images/trust.png" alt="pc">
-            <h3>Trust client</h3>
-            <br>
-            <p>Our clients should be aware of scumming site but this is not us, we are a trust company and we
-                answear to our clients
-                as soon as possible
-            </p>
-            <a href="#" class="btn">read more</a>
-        </div>
-
-        <div class="card">
-            <img src="${pageContext.request.contextPath}/images/delivery.png" alt="pc">
-            <h3>Fast delivery</h3>
-            <br>
-            <p>As soon as you order you'r products we will procced in our data base and we will delliver you'r
-                product
-                as soon as possible
-            </p>
-            <a href="#" class="btn">read more</a>
-        </div>
-
-        <div class="card">
-            <img src="${pageContext.request.contextPath}/images/payment.png" alt="pc">
-            <h3>Easy payment</h3>
-            <br>
-            <p>On our website we recomand using online payment,its easy and safe</p>
-            <a href="#" class="btn">read more</a>
-        </div>
-    </div>
-</section>
-
-<!--Footer-->
-
-<section class="footer">
-
-    <div class="box-container">
-
-        <div class="box">
-            <img src="${pageContext.request.contextPath}/images/logo2.png" alt="logo">
-            <p>Our company is a trust company and we are here to help you with your problems</p>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <h3>contact info</h3>
-            <a href="#" class="links"> <i class="fas fa-phone"></i> (+40) 077452990 </a>
-            <a href="#" class="links"> <i class="fas fa-phone"></i> (+40) 0749363188 </a>
-            <a href="#" class="links"> <i class="fas fa-envelope"></i> techlane@tech.com </a>
-            <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Sibiu, ROMANIA </a>
-        </div>
-
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> home </a>
-            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> about </a>
-            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> products </a>
-            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> features </a>
-
-        </div>
-    </div>
-
-    <script src="${pageContext.request.contextPath}/scripts/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-</body>
-
-</html>
+</t:pageTemplate>

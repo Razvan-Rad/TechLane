@@ -7,7 +7,6 @@
         <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
             <a class=" btn btn-primary btn-lg" href="${pageContext.request.contextPath}/AddCar">
                 Add Car
-
             </a>
 
             <button class="btn btn-danger" type="submit">Delete Cars</button>
