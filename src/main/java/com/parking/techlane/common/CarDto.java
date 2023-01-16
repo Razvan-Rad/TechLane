@@ -25,7 +25,4 @@ public class CarDto {
         return parkingSpot;
     }
 
-    public String getOwnerName() {
-        return ownerName;
-    }
 }

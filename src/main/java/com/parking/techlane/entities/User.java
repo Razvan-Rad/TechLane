@@ -6,7 +6,14 @@ import java.util.Collection;
 
 @Entity
 public class User {
+
     private Long id;
+    private String username;
+    private String email;
+    private String password;
+    private Collection<Car> cars;
+
+    private double balance;
 
     public void setId(Long id) {
         this.id = id;
@@ -18,7 +25,7 @@ public class User {
         return id;
     }
 
-    private String username;
+
 
     @Basic
     public String getUsername() {
@@ -28,8 +35,7 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
-    private String email;
-    private String password;
+
 
     private double balance;
 
@@ -57,13 +63,19 @@ public class User {
         this.password = password;
     }
 
-    private Collection<Car> cars;
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
 
     @OneToMany(mappedBy="owner")
     public Collection<Car> getCars() {
         return cars;
     }
-
     public void setCars(Collection<Car> cars) {
         this.cars = cars;
     }

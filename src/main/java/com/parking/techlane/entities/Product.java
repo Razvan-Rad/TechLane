@@ -41,13 +41,14 @@ public class Product {
 
     private User owner;
 
+    public void setOwner(User owner) {
+        this.owner = owner;
+
+    }
+
     @ManyToOne
     public User getOwner() {
         return owner;
     }
 
-    public void setOwner(User owner) {
-        this.owner = owner;
-
-    }
 }

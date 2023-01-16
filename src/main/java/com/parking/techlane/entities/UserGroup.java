@@ -9,11 +9,20 @@ public class UserGroup {
     Long id;
     String username;
     String userGroup;
+    String balance;
 
     @Id
     @GeneratedValue
     public Long getId() {
         return id;
+    }
+
+    public String getBalance() {
+        return balance;
+    }
+
+    public void setBalance(String balance) {
+        this.balance = balance;
     }
 
     public void setId(Long id) {

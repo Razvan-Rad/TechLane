@@ -27,7 +27,6 @@
         <div class="col">
             ${users.balance}
         </div>
-
       </div>
     </c:forEach>
 

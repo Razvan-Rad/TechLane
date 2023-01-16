@@ -7,8 +7,6 @@ public class UserDto {
     double balance;
     Long id;
 
-
-
     public UserDto(String email, String password, String username, double balance, Long id) {
         this.email = email;
         this.password = password;

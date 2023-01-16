@@ -11,7 +11,6 @@
         <div class="invalid-feedback">
           Username is required.
         </div>
-
       </div>
     </div>
     <div class="row">
@@ -32,7 +31,6 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col-md-6 mb-3">
         <label for="user_groups" >Groups</label>
@@ -42,6 +40,14 @@
             <option value="${user_group}">${user_group}</option>
           </c:forEach>
         </select>
+
+        <label for="balance">Balance</label>
+        <input type="text" class="form-control" id="balance" name="balance" placeholder="" value="" required>
+        <div class="invalid-feedback">
+          Balance is required.
+        </div>
+      </div>
+    </div>
 
 
         <div class="invalid-feedback">

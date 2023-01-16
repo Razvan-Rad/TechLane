@@ -29,12 +29,13 @@ public class AddUser extends HttpServlet {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        double balance = Double.parseDouble(request.getParameter("balance"));
         String[] userGroups = request.getParameterValues("user_groups");
         if (userGroups == null) {
             userGroups = new String[0];
         }
 
-        usersBean.createUser(username, email, password, Arrays.asList(userGroups));
+        usersBean.createUser(username, email, password, balance, Arrays.asList(userGroups));
         response.sendRedirect(request.getContextPath() + "/Users");
             }
 }
