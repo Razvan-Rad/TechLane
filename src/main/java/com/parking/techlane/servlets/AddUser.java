@@ -35,7 +35,7 @@ public class AddUser extends HttpServlet {
             userGroups = new String[0];
         }
 
-        usersBean.createUser(username, email, password, Arrays.asList(userGroups));
+        usersBean.createUser(username, email, password, balance, Arrays.asList(userGroups));
         response.sendRedirect(request.getContextPath() + "/Users");
             }
 }
