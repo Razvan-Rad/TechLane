@@ -13,7 +13,12 @@ document.querySelector("#menu-btn").onclick = () => {
   navbar.classList.toggle("active");
 };
 
-var swiper = new Swiper(".slider", {
+let wallet = document.querySelector(".wallet");
+document.querySelector("#wallet-btn").onclick = () => {
+  wallet.classList.toggle("active");
+};
+
+var swiper= new Swiper(".slider", {
   loop: true,
 
   spaceBetween: 20,

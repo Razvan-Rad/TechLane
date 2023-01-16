@@ -10,19 +10,19 @@
     <title>${pageTitle}</title>
 
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/home.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
 </head>
 <body>
-<jsp:include page="/WEB-INF/pages/menu.jsp" />
+
 
 <jsp:doBody/>
 
-<jsp:include page="/WEB-INF/pages/footer.jsp" />
-<script src="${pageContext.request.contextPath}/scripts/form-validation.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+
 </body>
 
 </html>

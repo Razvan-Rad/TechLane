@@ -2,8 +2,10 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 
 <t:pageTemplate pageTitle="About Parking Lot">
+    <br><br> <br><br><br><br><br<br><br> <br><br><br><br><br><br><br> <br><br><br><br><br>
     <section class="about" id="about us">
         <div class="main">
+
             <img src="${pageContext.request.contextPath}/images/laptop.png" alt="about us">
             <div class="about-text">
                 <h1>about us</h1>
@@ -12,8 +14,9 @@
                     we have everything you need for your daily life to a good price and for a good quality and best
                     performance.If you have any questions about our products you can easly send us an email
                     and we will be happy to answear :)</p>
-            </div>
 
+            </div>
         </div>
     </section>
+    <br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br> <br><br><br><br>
 </t:pageTemplate>

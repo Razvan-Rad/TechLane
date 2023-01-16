@@ -4,13 +4,25 @@ public class UserDto {
     String email;
     String password;
     String username;
+    double balance;
     Long id;
 
-    public UserDto(String email, String password, String username, Long id) {
+
+
+    public UserDto(String email, String password, String username, double balance, Long id) {
         this.email = email;
         this.password = password;
         this.username = username;
+        this.balance=balance;
         this.id = id;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public String getEmail() {

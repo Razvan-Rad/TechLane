@@ -1,7 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 
-<t:pageTemplate pageTitle="About Parking Lot">
+<t:pageTemplate pageTitle="Features Page">
+
+
+
+
 <section class="features" id="features">
     <h1 class="heading"> Our Features </h1>
     <div class="card-container">

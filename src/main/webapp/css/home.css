@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
 
 body {
-  background: url(../images/banner56565.webp);
+  background: url(../images/background.jpg);
 }
 * {
   font-family: "Gothic", sans-serif;
@@ -24,7 +24,7 @@ html {
 /* header section */
 
 .header {
- 
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -70,13 +70,42 @@ html {
   font-size: 1.7rem;
   border-radius: 0.5rem;
   border: 0.2rem solid rgb(182, 0, 0);
-  color: #c7b300;
+  color:#eee;
   cursor: pointer;
   background: none;
 }
 .btn:hover {
   background: rgba(201, 26, 26, 0.76);
   color: rgb(0, 0, 0);
+}
+
+/*wallet section*/
+.header .wallet{
+  position: absolute;
+  top: 110%;
+  right: -100rem;
+  width: 30rem;
+  box-shadow: 10px 10px 8px #000000;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: #1d1d1d;
+  text-align: center;
+}
+.header .wallet h3 {
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: #eee;
+}
+.header .wallet .balance{
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  text-align: center;
+  color: #eee;
+}
+.header .wallet.active{
+  right: 2rem;
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /*login section */
@@ -89,7 +118,7 @@ html {
   box-shadow: 10px 10px 8px #000000;
   padding: 2rem;
   border-radius: 0.5rem;
-  background: rgb(204, 201, 201);
+  background: #1d1d1d;
   text-align: center;
 }
 .header .login.active {
@@ -100,7 +129,7 @@ html {
 .header .login h3 {
   font: size 2.5rem;
   text-transform: uppercase;
-  color: black;
+  color:#eee;
 }
 
 .header .login .box {
@@ -117,7 +146,7 @@ html {
 .header .login p {
   font-size: 1.5rem;
   padding: 0.5rem 0;
-  color: black;
+  color: #eee;
 }
 .header .login p a {
   color: rgb(10, 89, 179);
@@ -134,7 +163,7 @@ html {
   border-radius: 0.5rem;
   box-shadow: #000000;
   width: 37rem;
-  background: rgb(206, 202, 202);
+  background: #1d1d1d;
 }
 .header .cart .box {
   display: flex;
@@ -152,7 +181,7 @@ html {
   top: 50%;
   right: 2rem;
   cursor: pointer;
-  color: #000000;
+  color: #eee;
   transform: translateY(-50%);
 }
 .header .cart .box .fa-trash:hover {
@@ -160,12 +189,12 @@ html {
 }
 
 .header .cart .box .content h3 {
-  color: #000000;
+  color: #eee;
   font-size: 2rem;
   padding-bottom: 1rem;
 }
 .header .cart .box .content span {
-  color: black;
+  color: #eee;
   font-size: 1.5rem;
 }
 .header .cart .box .content .quantity {
@@ -175,7 +204,7 @@ html {
   font-size: 2.5rem;
   padding: 1rem 0;
   text-align: center;
-  color: #000000;
+  color: #eee;
 }
 .header .cart .btn {
   display: block;
@@ -218,7 +247,7 @@ html {
     width: 30rem;
     box-shadow: #000000;
     border-radius: 0.5rem;
-    background: rgb(187, 187, 187);
+    background: #1d1d1d;
   }
   .header .navbar.active {
     right: 2rem;
@@ -304,16 +333,16 @@ html {
 
 .about img {
   height: auto;
-  width: 460px;
+  width: 700px;
 }
 
 .about-text {
-  width: 550px;
+  width: 700px;
 }
 .main {
-  width: 1130px;
+  width: 1500px;
   max-width: 95%;
-  margin: 0 auto;
+  margin:0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -321,11 +350,11 @@ html {
 .about-text h1 {
   text-transform: uppercase;
   background-image: linear-gradient(
-    -225deg,
-    #571515 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
+          -225deg,
+          #571515 0%,
+          #44107a 29%,
+          #ff1361 67%,
+          #fff800 100%
   );
   background-size: auto auto;
   background-clip: border-box;
@@ -395,11 +424,11 @@ html {
   font-size: 4.5rem;
   text-transform: uppercase;
   background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
+          -225deg,
+          #231557 0%,
+          #44107a 29%,
+          #ff1361 67%,
+          #fff800 100%
   );
   background-size: auto auto;
   background-clip: border-box;
@@ -414,12 +443,12 @@ html {
   display: flex;
 }
 .products input{
-    width: 50px;
-    height: 40px;
-    padding-left: 10px;
-    font-size: 20px;
-    margin-right: 10px;
-    border: 2px solid rgba(201, 26, 26, 0.76);
+  width: 50px;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 20px;
+  margin-right: 10px;
+  border: 2px solid rgba(201, 26, 26, 0.76);
 }
 
 /* feature section */
@@ -455,7 +484,7 @@ html {
 
 .footer{
   background: rgba(201, 26, 26, 0.76);
-  
+  min-height: 10vh;
 }
 
 .footer .box-container{
@@ -495,9 +524,8 @@ html {
 
 .footer .box-container .box .links:hover i{
   padding-right: 2rem;
-  
-}
 
+}
 
 .footer .box-container .box p{
   line-height: 1.8;
@@ -520,5 +548,3 @@ html {
 .footer .box-container .box .share a:hover{
   color: #fff;
 }
-
-

@@ -38,7 +38,7 @@ public class UserBean {
         List<UserDto> userDto;
         userDto=users
                 .stream()
-                .map(x->new UserDto(x.getEmail(), x.getPassword(), x.getUsername(),x.getId())).collect(Collectors.toList());
+                .map(x->new UserDto(x.getEmail(), x.getPassword(), x.getUsername(),x.getBalance(),x.getId())).collect(Collectors.toList());
         return userDto;
     }
     @Inject PasswordBean passwordBean;
@@ -48,6 +48,7 @@ public class UserBean {
         newUser.setUsername(username);
         newUser.setEmail(email);
         newUser.setPassword(passwordBean.convertToSha256(password));
+
         entityManager.persist(newUser);
         assignGroupsToUser(username, groups);
     }
