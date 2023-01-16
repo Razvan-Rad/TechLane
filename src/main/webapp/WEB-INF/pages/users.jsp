@@ -24,7 +24,9 @@
         <div class="col">
             ${users.email}
         </div>
-
+        <div class="col">
+            ${users.balance}
+        </div>
       </div>
     </c:forEach>
 

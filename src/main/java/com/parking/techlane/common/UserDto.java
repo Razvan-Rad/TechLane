@@ -6,10 +6,13 @@ public class UserDto {
     String username;
     Long id;
 
-    public UserDto(String email, String password, String username, Long id) {
+    double balance;
+
+    public UserDto(String email, String password, String username, double balance, Long id) {
         this.email = email;
         this.password = password;
         this.username = username;
+        this.balance=balance;
         this.id = id;
     }
 
@@ -23,6 +26,10 @@ public class UserDto {
 
     public String getUsername() {
         return username;
+    }
+
+    public double getBalance(){
+        return balance;
     }
 
     public Long getId() {

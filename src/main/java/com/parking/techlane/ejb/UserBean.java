@@ -34,23 +34,27 @@ public class UserBean {
         }
     }
 
+
     private List<UserDto> copyUsersToDto(List<User> users) {
         List<UserDto> userDto;
-        userDto=users
-                .stream()
-                .map(x->new UserDto(x.getEmail(), x.getPassword(), x.getUsername(),x.getId())).collect(Collectors.toList());
+        userDto = users.stream().map(x-> new UserDto(x.getEmail(), x.getPassword(), x.getUsername(), (x.getBalance()), x.getId())).collect(Collectors.toList());
+
         return userDto;
     }
+
     @Inject PasswordBean passwordBean;
-    public void createUser(String username, String email, String password, Collection<String> groups) {
+    public void createUser(String username, String email, String password, double balance, Collection<String> groups) {
         LOG.info("createUser");
         User newUser = new User();
+
         newUser.setUsername(username);
         newUser.setEmail(email);
         newUser.setPassword(passwordBean.convertToSha256(password));
+        newUser.setBalance(balance);
         entityManager.persist(newUser);
         assignGroupsToUser(username, groups);
     }
+
     private void assignGroupsToUser(String username, Collection<String> groups) {
         LOG.info("assignGroupsToUser");
         for (String group : groups) {
