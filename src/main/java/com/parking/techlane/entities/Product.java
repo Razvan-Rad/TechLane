@@ -17,38 +17,36 @@ public class Product {
         return id;
     }
 
-    private String licensePlate;
+    private String name;
 
     @Basic
-    public String getLicensePlate() {
-        return licensePlate;
+    public String getName() {
+        return name;
     }
 
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    private String parkingSpot;
+    private String description;
 
     @Basic
-    public String getParkingSpot() {
-        return parkingSpot;
+    public String getDescription() {
+        return description;
     }
 
-    public void setParkingSpot(String parkingSpot) {
-        this.parkingSpot = parkingSpot;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    private User owner;
 
-    public void setOwner(User owner) {
-        this.owner = owner;
+    private double price;
 
+    public double getPrice() {
+        return price;
     }
 
-    @ManyToOne
-    public User getOwner() {
-        return owner;
+    public void setPrice(double price) {
+        this.price = price;
     }
-
 }
