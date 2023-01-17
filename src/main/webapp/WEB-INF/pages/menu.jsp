@@ -10,6 +10,12 @@
         <a href="${pageContext.request.contextPath}/about.jsp">About us</a>
         <a href="${pageContext.request.contextPath}/Products">Products</a>
         <a href="${pageContext.request.contextPath}/features.jsp">Features</a>
+
+        <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
+            <a href="${pageContext.request.contextPath}/AddProduct">Add Product</a>
+            <a href="${pageContext.request.contextPath}/AddUser">Add User</a>
+        </c:if>
+
         <c:choose>
             <c:when test="${pageContext.request.getRemoteUser() == null}">
 
@@ -57,13 +63,13 @@
             </div>
         </div>
         <div class="total"> total: 6.000 Ron</div>
-        <a href="checkout.html" class="btn">checkout</a>
+        <a href="${pageContext.request.contextPath}/checkout.jsp" class="btn">checkout</a>
     </div>
 
     <div class="wallet">
         <h3>You'r binnace</h3>
         <div class="balance"> 100.000  Ron</div>
-        <a href="wallet.html" class="btn">checkout</a>
+        <a href="${pageContext.request.contextPath}/wallet.jsp" class="btn">checkout</a>
     </div>
 
 </header>
