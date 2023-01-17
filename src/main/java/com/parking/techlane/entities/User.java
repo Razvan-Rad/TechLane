@@ -12,7 +12,6 @@ public class User {
     private String email;
     private String password;
     private Collection<Car> cars;
-
     private double balance;
 
     public void setId(Long id) {
@@ -36,9 +35,6 @@ public class User {
         this.username = username;
     }
 
-
-    private double balance;
-
     public double getBalance() {
         return balance;
     }
@@ -61,14 +57,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public double getBalance() {
-        return balance;
     }
 
 
