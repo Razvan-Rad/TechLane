@@ -5,6 +5,16 @@ import jakarta.persistence.OneToOne;
 
 @Entity
 public class Product {
+    private String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     private Long id;
 
     public void setId(Long id) {

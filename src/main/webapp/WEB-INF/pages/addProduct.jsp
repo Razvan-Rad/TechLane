@@ -34,6 +34,15 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="image">Enter an image link</label>
+                <input type="text" class="form-control" id="image" name="image" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                    Image is required.
+                </div>
+            </div>
+        </div>
 
         </div>
         <div >

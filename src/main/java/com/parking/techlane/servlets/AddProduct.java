@@ -30,8 +30,8 @@ public class AddProduct extends HttpServlet{
         String name=request.getParameter("name");
         String description=request.getParameter("description");
         double price = Double.parseDouble(request.getParameter("price"));
-
-        productsBean.createProduct(name,description, price);
+        String image = request.getParameter("image");
+        productsBean.createProduct(name,description, price, image);
         response.sendRedirect(request.getContextPath()+"/Products");
 
     }

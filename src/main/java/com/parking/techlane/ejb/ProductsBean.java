@@ -38,25 +38,26 @@ public class ProductsBean {
         List<ProductDto> productDto;
         productDto=products
                 .stream()
-                .map(x->new ProductDto(x.getId(),x.getName(),x.getDescription(),x.getPrice())).collect(Collectors.toList());
+                .map(x->new ProductDto(x.getId(),x.getName(),x.getDescription(),x.getPrice(),x.getImage() )).collect(Collectors.toList());
         return productDto;
     }
 
     public ProductDto findById(Long productId){
 
         Product product=entityManager.find(Product.class,productId);
-        ProductDto products=new ProductDto(product.getId(),product.getName(), product.getDescription(), product.getPrice()) ;
+        ProductDto products=new ProductDto(product.getId(),product.getName(), product.getDescription(), product.getPrice(), product.getImage()) ;
 
         return products;
 
     }
 
-    public void createProduct(String name,String description, double price){
+    public void createProduct(String name,String description, double price, String image){
         LOG.info("createProduct");
         Product product = new Product();
         product.setName("abc");
         product.setDescription(description);
         product.setPrice(price);
+        product.setImage(image);
         entityManager.persist(product);
     }
 

@@ -9,7 +9,8 @@
             <div class="swiper-wrapper">
             <c:forEach var="product" items="${products}">
                     <div class="swiper-slide card">
-                        <img src="${pageContext.request.contextPath}/images/pc.png" alt="pc">
+
+                        <img src="${product.image}" alt="pc">
                         <h3>${product.name}</h3>
                         <div class="price">${product.description}</div>
                         <div class="price">${product.price} Ron</div>
