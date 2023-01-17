@@ -16,8 +16,7 @@
     <form method="POST" action="j_security_check">
         <div class="form-group">
             <input type="text"  name="j_username"   required  />
-        <label  >Username</label>
-
+        <label>Username</label>
         </div>
         <div class="form-group">
             <input type="password"  name="j_password" required  />

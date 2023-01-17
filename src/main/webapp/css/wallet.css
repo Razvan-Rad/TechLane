@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Gothic", sans-serif;
+    background:   url(../images/background.jpg);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wallet-container{
+
+    background: rgba(201, 26, 26, 0.76);
+    width: 320px;
+    color: rgb(194, 194, 194);
+    font-size: 15px;
+    padding: 20px 60px 20px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 5px solid yellow;
+    border-radius: 10px;
+
+}
+.title{
+    text-align: left;
+}
+.fa-user{
+    float:right;
+}
+.fa-align-left{
+    margin-right:15px ;
+}
+.amount-box{
+    display: grid;
+    text-align: center;
+    justify-content:center;
+
+
+}
+.amount-box .image-box{
+    display: flex;
+    text-align: center;
+    justify-content:center;
+
+
+}
+.amount-box img{
+    width: 60px;
+    display: flex;
+    text-align: center;
+    justify-content:center;
+
+
+}
+.ballance{
+    font-size: 35px;
+}
+.amount-box p{
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+
+
+.footer{
+    margin:20px -20px 0;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+    padding: 10px 10px 0;
+}
+.footer p{
+    font-size: 12px;
+}
+.footer .col-md-3{
+    display: flex;
+    justify-content: center;
+}
+
+.footer .icons{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    margin-right: 0.3rem;
+    text-align: center;
+}
+.footer .icons:hover{
+    color: rgb(255, 255, 255);
+}
+.wallet-container  .icons{
+
+    cursor: pointer;
+    font-size: 2rem;
+
+
+}
