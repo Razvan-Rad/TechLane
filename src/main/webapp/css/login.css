@@ -82,7 +82,7 @@ form .form-group {
 .form-group input:valid ~ label {
     top: -5px;
     left: 0;
-    color: white;
+    color: black;
 }
 .form-group input:focus ~ span::before,
 .form-group input:valid ~ span::before {

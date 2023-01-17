@@ -23,19 +23,11 @@
     <div class="icons">
         <div class="fas fa-bars" id="menu-btn"></div>
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
-        <c:choose>
-            <c:when test="${pageContext.request.getRemoteUser() == null}">
-                <a href="${pageContext.request.contextPath}/Login">
-                    <div class="fas fa-user" id="user-btn"></div>
-                </a>
-            </c:when>
-            <c:otherwise>
-                <div class="fas fa-wallet" id="wallet-btn"></div>
-                <a href="${pageContext.request.contextPath}/Logout">
+        <div class="fas fa-wallet" id="wallet-btn"></div>
+        <a href="${pageContext.request.contextPath}/Login"}>
+        <div class="fas fa-user" id="user-btn"></div>
+        </a>
 
-                </a>
-            </c:otherwise>
-        </c:choose>
 
 
 
