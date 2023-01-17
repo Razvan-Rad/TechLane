@@ -1,6 +1,7 @@
 package com.parking.techlane.ejb;
 
 import com.parking.techlane.common.ProductDto;
+import com.parking.techlane.entities.Car;
 import com.parking.techlane.entities.Product;
 import com.parking.techlane.entities.User;
 import jakarta.ejb.EJBException;
@@ -37,17 +38,26 @@ public class ProductsBean {
         List<ProductDto> productDto;
         productDto=products
                 .stream()
-                .map(x->new ProductDto(x.getId(),x.getLicensePlate(),x.getParkingSpot(),x.getOwner().getUsername())).collect(Collectors.toList());
+                .map(x->new ProductDto(x.getId(),x.getName(),x.getDescription(),x.getPrice())).collect(Collectors.toList());
         return productDto;
     }
 
     public ProductDto findById(Long productId){
 
         Product product=entityManager.find(Product.class,productId);
-        ProductDto products=new ProductDto(product.getId(),product.getLicensePlate(), product.getParkingSpot(), product.getOwner().getUsername()) ;
+        ProductDto products=new ProductDto(product.getId(),product.getName(), product.getDescription(), product.getPrice()) ;
 
         return products;
 
+    }
+
+    public void createProduct(String name,String description, double price){
+        LOG.info("createProduct");
+        Product product = new Product();
+        product.setName("abc");
+        product.setDescription(description);
+        product.setPrice(price);
+        entityManager.persist(product);
     }
 
     public void deleteProductsByIds(Collection<Long> productIds){

@@ -7,148 +7,126 @@
         <h1 class="heading"> Our Products </h1>
         <div class="swiper slider">
             <div class="swiper-wrapper">
-
-                <c:forEach var="product" items="${products}">
-                        <div class="col">
-                            <input type="checkbox" name="car_ids" value="${car.id}"/>
-
+            <c:forEach var="product" items="${products}">
+                    <div class="swiper-slide card">
+                        <img src="${pageContext.request.contextPath}/images/pc.png" alt="pc">
+                        <h3>${product.name}</h3>
+                        <div class="price">${product.description}</div>
+                        <div class="price">${product.price} Ron</div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
                         </div>
-
-                        <div class="col">
-                            <h3>Name</h3>
-                                ${product.licensePlate}
-                        </div>
-
-                        <div class="col">
-                            <h3>Description</h3>
-                                ${product.parkingSpot}
-                        </div>
-
-                        <div class="col">
-                            <h3>TODO make this int (Rating?) </h3>
-                                ${product.ownerName}
-                        </div>
-
-                        <div class="col">
-                                <%--                        <img src="${pageContext.request.contextPath}/CarPhoto?id=${car.id}" width="48"/>--%>
-                            <img src="${pageContext.request.contextPath}/images/1.png" width="48"/>
-                        </div>
-
-                        <c:if test="${pageContext.request.isUserInRole('WRITE_CARS')}">
-                            <div class="col">
-                                <a class="btn btn-secondary"
-                                   href="${pageContext.request.contextPath}/AddCarPhoto?id=${car.id}" role="button">Add
-                                    Photo</a>
-                            </div>
-                            <div class="col">
-                                <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditCar?id=${car.id}">Edit
-                                    Car</a>
-                            </div>
-                        </c:if>
-                        </div>
-                </c:forEach>
-                <div class="swiper-slide card">
-                    <img src="${pageContext.request.contextPath}/images/pc.png" alt="pc">
-                    <h3>PC Gaming Snake 5500V</h3>
-                    <div class="price">Asus Rog B650-e,Intel I7-7700k, Nvidia GeForce 3080, 32 gb RAM, 1TB SSD</div>
-                    <div class="price">10.000 Ron</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <input type="number" value="1">
+                        <a href="#" class="btn">Add to cart</a>
                     </div>
-                    <input type="number" value="1">
-                    <a href="#" class="btn">add to cart</a>
-
+            </c:forEach>
+            <br><br><br><br><br><br><br><br><br><br><br>
+            <div class="swiper-slide card">
+                <img src="${pageContext.request.contextPath}/images/pc.png" alt="pc">
+                <h3>PC Gaming Snake 5500V</h3>
+                <div class="price">Asus Rog B650-e,Intel I7-7700k, Nvidia GeForce 3080, 32 gb RAM, 1TB SSD</div>
+                <div class="price">10.000 Ron</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
+                <input type="number" value="1">
+                <a href="#" class="btn">Add to cart</a>
 
-                <div class="swiper-slide card">
-                    <img src="${pageContext.request.contextPath}/images/1.png" alt="pc">
-                    <h3>PC Ultra Demon 66G9</h3>
-                    <div class="price">AMD Radeon 15X, AMD Ryzen 7, Radeon Graphics, 16 gb RAM, 2TB SDD</div>
-                    <div class="price">12.000 Ron</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-
-                    </div>
-                    <input type="number" value="1">
-                    <a href="#" class="btn">add to cart</a>
-
-                </div>
-                <div class="swiper-slide card">
-                    <img src="${pageContext.request.contextPath}/images/2.png" alt="pc">
-                    <h3>PC Gaming Suvenir 12GO</h3>
-                    <div class="price">Asus Rog 60HI6, Intel I5-5500, Nvidia Geforce 1080p, 32gb RAM, 2TB HDD, 1TB SSD
-                    </div>
-                    <div class="price">10.000 Ron</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <input type="number" value="1">
-                    <a href="#" class="btn">add to cart</a>
-
-                </div>
-                <div class="swiper-slide card">
-                    <img src="${pageContext.request.contextPath}/images/3.png" alt="pc">
-                    <h3>PC Rapid Fire X99</h3>
-                    <div class="price">Asus Rog B650-e,Intel I7-7700k, Nvidia GeForce 3080, 32 gb RAM, 2TB SSD</div>
-                    <div class="price">25.000 Ron</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-
-                    </div>
-                    <input type="number" value="1">
-                    <a href="#" class="btn">add to cart</a>
-
-                </div>
-                <div class="swiper-slide card">
-                    <img src="${pageContext.request.contextPath}/images/4.png" alt="pc">
-                    <h3>PC Under Armour 66GIG</h3>
-                    <div class="price">Asus Rog A66,Intel I7-5700k, Nvidia GeForce 2080, 16 gb RAM, 500GB SSD</div>
-                    <div class="price">5.000 Ron</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-
-                    </div>
-                    <input type="number" value="1">
-                    <a href="#" class="btn">add to cart</a>
-
-                </div>
-                <div class="swiper-slide card">
-                    <img src="${pageContext.request.contextPath}/images/5.png" alt="pc">
-                    <h3>PC Blue Yeti 45H</h3>
-                    <div class="price">Asus Rog E600,Intel I3-2700k, Nvidia GeForce 1060, 8 gb RAM, 1TB SSD</div>
-                    <div class="price">2.200 Ron</div>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-
-                    </div>
-                    <input type="number" value="1">
-                    <a href="#" class="btn">add to cart</a>
-
-                </div>
             </div>
+
+            <div class="swiper-slide card">
+                <img src="${pageContext.request.contextPath}/images/1.png" alt="pc">
+                <h3>PC Ultra Demon 66G9</h3>
+                <div class="price">AMD Radeon 15X, AMD Ryzen 7, Radeon Graphics, 16 gb RAM, 2TB SDD</div>
+                <div class="price">12.000 Ron</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+
+                </div>
+                <input type="number" value="1">
+                <a href="#" class="btn">add to cart</a>
+
+            </div>
+            <div class="swiper-slide card">
+                <img src="${pageContext.request.contextPath}/images/2.png" alt="pc">
+                <h3>PC Gaming Suvenir 12GO</h3>
+                <div class="price">Asus Rog 60HI6, Intel I5-5500, Nvidia Geforce 1080p, 32gb RAM, 2TB HDD, 1TB SSD
+                </div>
+                <div class="price">10.000 Ron</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <input type="number" value="1">
+                <a href="#" class="btn">add to cart</a>
+
+            </div>
+            <div class="swiper-slide card">
+                <img src="${pageContext.request.contextPath}/images/3.png" alt="pc">
+                <h3>PC Rapid Fire X99</h3>
+                <div class="price">Asus Rog B650-e,Intel I7-7700k, Nvidia GeForce 3080, 32 gb RAM, 2TB SSD</div>
+                <div class="price">25.000 Ron</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+
+                </div>
+                <input type="number" value="1">
+                <a href="#" class="btn">add to cart</a>
+
+            </div>
+            <div class="swiper-slide card">
+                <img src="${pageContext.request.contextPath}/images/4.png" alt="pc">
+                <h3>PC Under Armour 66GIG</h3>
+                <div class="price">Asus Rog A66,Intel I7-5700k, Nvidia GeForce 2080, 16 gb RAM, 500GB SSD</div>
+                <div class="price">5.000 Ron</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+
+                </div>
+                <input type="number" value="1">
+                <a href="#" class="btn">add to cart</a>
+
+            </div>
+            <div class="swiper-slide card">
+                <img src="${pageContext.request.contextPath}/images/5.png" alt="pc">
+                <h3>PC Blue Yeti 45H</h3>
+                <div class="price">Asus Rog E600,Intel I3-2700k, Nvidia GeForce 1060, 8 gb RAM, 1TB SSD</div>
+                <div class="price">2.200 Ron</div>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+
+                </div>
+                <input type="number" value="1">
+                <a href="#" class="btn">add to cart</a>
+
+            </div>
+        </div>
         </div>
 
         <div class="swiper slider">

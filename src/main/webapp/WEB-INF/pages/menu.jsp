@@ -8,7 +8,7 @@
     <nav class="navbar">
         <a href="${pageContext.request.contextPath}">Home</a>
         <a href="${pageContext.request.contextPath}/about.jsp">About us</a>
-        <a href="${pageContext.request.contextPath}/products.jsp">Products</a>
+        <a href="${pageContext.request.contextPath}/Products">Products</a>
         <a href="${pageContext.request.contextPath}/features.jsp">Features</a>
         <c:choose>
             <c:when test="${pageContext.request.getRemoteUser() == null}">
